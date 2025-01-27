@@ -1,0 +1,15 @@
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/obj/Debug/net8.0/20.1.25 LiarsDice.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/obj/Debug/net8.0/20.1.25 LiarsDice.AssemblyInfoInputs.cache
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/obj/Debug/net8.0/20.1.25 LiarsDice.AssemblyInfo.cs
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/obj/Debug/net8.0/20.1.25 LiarsDice.csproj.CoreCompileInputs.cache
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/obj/Debug/net8.0/20.1.25 LiarsDice.sourcelink.json
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/bin/Debug/net8.0/20.1.25 LiarsDice
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/bin/Debug/net8.0/20.1.25 LiarsDice.deps.json
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/bin/Debug/net8.0/20.1.25 LiarsDice.runtimeconfig.json
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/bin/Debug/net8.0/20.1.25 LiarsDice.dll
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/bin/Debug/net8.0/20.1.25 LiarsDice.pdb
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/obj/Debug/net8.0/20.1.25 LiarsDice.dll
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/obj/Debug/net8.0/refint/20.1.25 LiarsDice.dll
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/obj/Debug/net8.0/20.1.25 LiarsDice.pdb
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/obj/Debug/net8.0/20.1.25 LiarsDice.genruntimeconfig.cache
+/Users/Henry/Library/CloudStorage/OneDrive-HillsRoadSixthFormCollege(2)/1. Computer Science/Paper 1/2) Object Orientated Programming/Coding/20.1.25 LiarsDice/obj/Debug/net8.0/ref/20.1.25 LiarsDice.dll
