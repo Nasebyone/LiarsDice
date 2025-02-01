@@ -12,7 +12,7 @@ public abstract class Player
     {
         Name = name;
         Hand = new Hand(dice);
-        RollDice();
+        Hand.RollHand();
     }
 
     public void RollDice()
@@ -25,5 +25,5 @@ public abstract class Player
         Hand.LoseDice();
     }
 
-    public abstract bid MakeBid(bid CurrentBid);  // Abstract method to be implemented by subclasses
+    public abstract bid MakeBid(bid CurrentBid, int totalDice);  // Abstract method to be implemented by subclasses
 }

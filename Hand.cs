@@ -16,6 +16,14 @@ namespace LiarsDice {
         public void LoseDice() {
             dice.RemoveAt(0);
         }
+        public List<int> GetValues() {
+            List<int> values = new List<int>();
+            foreach(Dice dice in dice) {
+                values.Add(dice.Value);
+            }
+            values.Sort();
+            return values;
+        }
         
     }
 }

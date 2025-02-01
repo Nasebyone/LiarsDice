@@ -10,15 +10,18 @@ namespace LiarsDice
         int humanCount;
         int computerCount;
 
-        private int rounds = 5;
+        private int roundCounter = 1;
+        int playerTracker = 0;
+
+        int totalDice = 0;
 
         private bid currentBid;
 
         public void Start()
         {
-            Console.Write("How many players are ye?: ");
+            Console.Write("How many human players are ye?: ");
             humanCount = int.Parse(Console.ReadLine());
-            Console.Write("How many computers do you want?: ");
+            Console.Write("How many computers do yer want?: ");
             computerCount = int.Parse(Console.ReadLine());
 
             Console.Write("How many dice are ye playing with?: ");
@@ -32,22 +35,121 @@ namespace LiarsDice
             {
                 players.Add(new Computer("AI Bot " + i, diceCount));
             }
-            for (int i = 0; i <= rounds; i++)
+            while (players.Count > 1)
             {
-                Round();
+                Round(roundCounter);
+                roundCounter++;
             }
         }
 
 
-        public void Round()
+        public void Round(int roundCounter)
         {
+            Console.Clear();
+            Console.WriteLine("=========================");
+            Console.WriteLine("Round " + roundCounter);
+            Console.WriteLine("=========================");
+            currentBid = new bid();
+            totalDice = 0;
+            int tempValue = 0;
             foreach (Player player in players)
             {
                 player.RollDice();
-                currentBid = player.MakeBid(currentBid);
+                totalDice += player.Hand.dice.Count;
             }
+            // foreach (Player player in players)
             
-            Console.WriteLine("Current bid is " + currentBid.count + " " + currentBid.dice + "'s");
+            while (true)
+            {
+                if (players[playerTracker].Hand.dice.Count == 0)
+                {
+                    Console.WriteLine(players[playerTracker].Name + " has no dice left and is out of the game");
+                    players.RemoveAt(playerTracker);
+
+                }
+                else
+                {
+                    currentBid = players[playerTracker].MakeBid(currentBid, totalDice);
+
+                    if (currentBid.liar)
+                    {
+
+                        Console.WriteLine($"LIAAAARRRRR has been called by {players[playerTracker].Name}\n");
+                        Console.WriteLine("revealing dice: \n");
+                        Dictionary<int, int> totalDiceCounts = new Dictionary<int, int>();
+                        foreach (Player p in players)
+                        {
+                            var diceCounts = p.Hand.GetValues().GroupBy(v => v)
+                                            .Select(g => new { Value = g.Key, Count = g.Count() });
+                            Console.WriteLine($" \n {p.Name}:");
+                            foreach (var dice in diceCounts)
+                            {
+                                Console.WriteLine($"- {dice.Count} x {dice.Value}'s");
+                                if (totalDiceCounts.ContainsKey(dice.Value))
+                                {
+                                    totalDiceCounts[dice.Value] += dice.Count;
+                                }
+                                else
+                                {
+                                    totalDiceCounts[dice.Value] = dice.Count;
+                                }
+                            }
+                        }
+                        Console.WriteLine("=========================");
+                        Console.WriteLine("totals:");
+                        Console.WriteLine($"current bid is {currentBid.count} {currentBid.dice}'s");
+                        Console.WriteLine("=========================");
+                        foreach (var dice in totalDiceCounts.OrderBy(d => d.Key))
+                        {
+
+                            if (dice.Key == currentBid.dice)
+                            {
+                                Console.WriteLine($"-> {dice.Value} x {dice.Key}'s <-");
+                                tempValue = dice.Value;
+                            }
+                            else
+                            {
+                                Console.WriteLine($"-  {dice.Value} x {dice.Key}'s");
+                            }
+                            
+                        }
+                        if (tempValue < currentBid.count)
+                                {
+                                    Console.WriteLine($"{players[playerTracker].Name} was correct: {currentBid.count } {currentBid.dice}'s are not in play");
+                                    if (playerTracker == 0)
+                                    {
+                                        Console.WriteLine(players[players.Count - 1].Name + " loses a die");
+                                        players[players.Count - 1].LoseDie();
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine(players[playerTracker - 1].Name + " loses a die");
+                                        players[playerTracker - 1].LoseDie();
+                                    }
+
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"{players[playerTracker].Name} was incorrect: {currentBid.count } {currentBid.dice}'s are in play");
+                                    Console.WriteLine($"{players[playerTracker].Name} loses a die");
+                                    players[playerTracker].LoseDie();
+                                }
+
+                        break;
+                    }
+                    Console.WriteLine($"\n//{players[playerTracker].Name} Current bid is {currentBid.count} {currentBid.dice}'s//\n");
+                    playerTracker++;
+                    if (playerTracker >= players.Count)
+                    {
+                        playerTracker = 0;
+                    }
+                }
+            }
+             Console.Write("Press any key to continue to next round: ");
+                Console.ReadKey();
+
+
+
         }
 
         static void Main(string[] args)
