@@ -58,7 +58,8 @@ namespace LiarsDice
                 Console.Write("How many of them are there: ");
                 int bidCount = int.Parse(Console.ReadLine());
 
-                if ((bidDice > currentBid.dice && bidCount >= currentBid.count) || (bidCount > currentBid.count && bidDice == currentBid.dice))
+                //if ((bidDice > currentBid.dice && bidCount >= currentBid.count) || (bidCount > currentBid.count && bidDice == currentBid.dice))
+                if ((bidCount > currentBid.count) || (bidDice > currentBid.dice && bidCount >= currentBid.count))
                 {
                     valid = true;
                     newbid.count = bidCount;
